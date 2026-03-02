@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<title>Thank You | Cherry Creek Machine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{--black:#141210;--dark:#1C1A18;--steel:#242220;--panel:#2C2A27;--border:#3A3733;--border2:#4A4744;--text:#C8C3BC;--muted:#7A7470;--white:#F5F2EE;--warm:#EAE5DE;--red:#B8240F;--red2:#962010;--red-dim:rgba(184,36,15,0.08);--display:'Barlow Condensed',sans-serif;--body:'Barlow',sans-serif;--mono:'DM Mono',monospace}
+body{background:var(--dark);color:var(--text);font-family:var(--body);font-weight:400;line-height:1.65;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center;-webkit-font-smoothing:antialiased}
+.ty-icon{width:80px;height:80px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;font-size:36px;color:#fff;animation:scaleIn 0.5s 0.2s cubic-bezier(0.16,1,0.3,1) both}
+@keyframes scaleIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.ty-title{font-family:var(--display);font-size:clamp(36px,5vw,56px);font-weight:900;text-transform:uppercase;color:var(--white);line-height:0.95;margin-bottom:16px;animation:fadeUp 0.6s 0.4s ease both;opacity:0}
+.ty-title em{font-style:normal;color:var(--red)}
+.ty-sub{font-size:16px;color:var(--text);max-width:480px;line-height:1.8;margin:0 auto 32px;animation:fadeUp 0.6s 0.55s ease both;opacity:0}
+.ty-sub strong{color:var(--warm);font-weight:500}
+.ty-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.6s 0.7s ease both;opacity:0}
+.ty-btn{background:var(--red);color:#fff;font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:14px 28px;text-decoration:none;border-radius:2px;transition:background 0.2s;display:inline-flex;align-items:center;gap:8px}
+.ty-btn:hover{background:var(--red2)}
+.ty-btn-ghost{color:var(--warm);font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:13px 22px;text-decoration:none;border:1px solid var(--border2);border-radius:2px;transition:border-color 0.2s,color 0.2s;display:inline-flex;align-items:center;gap:8px}
+.ty-btn-ghost:hover{border-color:var(--red);color:var(--red)}
+.ty-contact{margin-top:40px;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);animation:fadeUp 0.6s 0.85s ease both;opacity:0}
+.ty-contact a{color:var(--red);text-decoration:none;transition:color 0.2s}
+.ty-contact a:hover{color:var(--white)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="ty-icon">✓</div>
+<h1 class="ty-title">Quote Request<br><em>Received.</em></h1>
+<p class="ty-sub">Thank you for reaching out. Our team reviews every request personally and you'll hear back from us <strong>within 1 business day</strong>. If you attached drawings, we've received those too.</p>
+<div class="ty-actions">
+  <a href="/" class="ty-btn">Back to Homepage →</a>
+  <a href="/capabilities" class="ty-btn-ghost">View Our Capabilities</a>
+</div>
+<div class="ty-contact">
+  Need something sooner? Call us at <a href="tel:9189259780">(918) 925-9780</a>
+</div>
+</body>
+</html>
