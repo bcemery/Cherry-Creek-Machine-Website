@@ -1,0 +1,30 @@
+# Cherry Creek Machine — Netlify Redirects
+# Preserves SEO juice from old Squarespace URLs
+
+# Old Squarespace pages → New pages (301 permanent)
+/home                    /                    301
+/home-old                /                    301
+/cnc-milling-old         /cnc-milling         301
+/cnc-turning-old         /cnc-turning         301
+/cnc-waterjet-old        /waterjet-cutting    301
+/welding-fabrication-old /                    301
+/video                   /about               301
+
+# Squarespace anchor-style quality section → new quality page
+/quality-iso             /quality             301
+
+# Capabilities landing → CNC milling (as set up in site)
+/capabilities            /cnc-milling         301
+/services                /cnc-milling         301
+
+# Common misspellings / alternates
+/waterjet                /waterjet-cutting    301
+/water-jet               /waterjet-cutting    301
+/milling                 /cnc-milling         301
+/turning                 /cnc-turning         301
+/contact                 /#contact            301
+/quote                   /#contact            301
+/jobs                    /careers             301
+
+# Old Squarespace file paths still work (certificate PDF)
+# No redirect needed — the PDF link in the site points to the Squarespace URL directly
