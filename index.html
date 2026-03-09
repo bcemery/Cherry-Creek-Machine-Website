@@ -943,9 +943,9 @@ footer{padding:40px 24px 22px}.footer-grid{grid-template-columns:1fr 1fr;gap:32p
       <!-- Simple attach -->
       <div class="pub-simple show" id="pubSimple">
         <label>
-          <input type="file" id="pubSimpleInput" multiple accept=".pdf,.dxf,.step,.stp,.stl,.obj,.3mf,.iges,.igs,.dwg">
+          <input type="file" id="pubSimpleInput" name="attachment" multiple accept=".pdf,.dxf,.step,.stp,.stl,.obj,.3mf,.iges,.igs,.dwg,.f3d,.x_t,.x_b">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          Attach drawings — PDF, DXF, STEP, STL, DWG
+          Attach drawings — PDF, DXF, STEP, STL, DWG, F3D
         </label>
         <div class="pub-simple-attached" id="pubSimpleAttached" style="display:none"></div>
       </div>
@@ -954,6 +954,7 @@ footer{padding:40px 24px 22px}.footer-grid{grid-template-columns:1fr 1fr;gap:32p
       <div class="pub-3d" id="pub3d">
         <div class="pub-dropzone" id="pubDropzone">
           <input type="file" id="pubFileInput" accept=".step,.stp,.stl,.obj,.3mf,.iges,.igs">
+          <input type="file" id="pubFileHidden" name="attachment" style="display:none">
           <svg class="pub-dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="17 8 12 3 7 8"/>
@@ -1095,6 +1096,9 @@ window.pubSwitchTab = function(tab) {
   document.getElementById('pubTab3d').classList.toggle('active', tab==='3d');
   document.getElementById('pubSimple').classList.toggle('show', tab==='simple');
   document.getElementById('pub3d').classList.toggle('show', tab==='3d');
+  /* Clear the other tab's file input so we don't send duplicates */
+  if (tab==='simple') { document.getElementById('pubFileHidden').value=''; }
+  else { document.getElementById('pubSimpleInput').value=''; var el=document.getElementById('pubSimpleAttached'); if(el) el.style.display='none'; }
   if (tab==='3d' && !scene) initScene();
 };
 
@@ -1139,6 +1143,7 @@ document.getElementById('pubBtnClear').addEventListener('click', ()=>{
   vtoolbar.style.display='none';
   if(model){ scene.remove(model); model.traverse(c=>{ if(c.isMesh) c.geometry.dispose(); }); model=null; }
   finput.value='';
+  document.getElementById('pubFileHidden').value='';
 });
 
 function initScene() {
@@ -1171,6 +1176,13 @@ function initScene() {
 }
 
 async function go(file) {
+  /* ── Copy file to hidden form input so it submits with the quote ── */
+  try {
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    document.getElementById('pubFileHidden').files = dt.files;
+  } catch(e) { /* fallback: old browsers just won't attach */ }
+
   const name=file.name, ext=name.split('.').pop().toLowerCase();
   dropzone.style.display='none';
   canvasWrap.classList.add('show');
