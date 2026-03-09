@@ -28,7 +28,10 @@ gtag('config', 'G-BBQYVMGJ3W');
 <meta name="geo.region" content="US-OK">
 <meta name="geo.placename" content="Tulsa, Oklahoma">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -465,7 +468,11 @@ footer{padding:40px 24px 22px}.footer-grid{grid-template-columns:1fr 1fr;gap:32p
 @media(max-width:960px){
   .hero-body{padding:0 24px 56px}.hero-specs,.hero-iso,.scroll-cue{display:none}
   .hero-trust{flex-wrap:wrap}.ht-item{flex:1 1 50%;border-right:none}
-  .stats-band{grid-template-columns:repeat(3,1fr)}
+  .stats-band{grid-template-columns:repeat(5,1fr)}
+  .sb{padding:20px 8px}
+  .sb-num{font-size:20px}
+  .sb.iso-cell .sb-num{font-size:9px}
+  .sb-lbl{font-size:7.5px;letter-spacing:0.1em}
   .why,.caps,.materials,.testimonials{padding:60px 24px}
   .why-inner{grid-template-columns:1fr}.why-left{border-right:none;border-bottom:1px solid var(--border);padding-right:0;padding-bottom:32px;margin-bottom:8px}
   .cap-feat{grid-template-columns:1fr}.cap-feat:nth-child(even){direction:ltr}.cf-img{min-height:220px}.cf-text{padding:32px 24px}
@@ -657,7 +664,7 @@ footer{padding:40px 24px 22px}.footer-grid{grid-template-columns:1fr 1fr;gap:32p
   border-radius:2px;
 }
 @media(max-width:960px){
-  .viewer-teaser{padding:0 24px;flex-wrap:wrap;gap:12px}
+  .viewer-teaser{padding:16px 24px;flex-wrap:wrap;gap:12px}
   .vt-formats{display:none}
 }
 
@@ -865,12 +872,12 @@ footer{padding:40px 24px 22px}.footer-grid{grid-template-columns:1fr 1fr;gap:32p
   <h2 class="sec-title reveal">What Our <em>Customers Say</em></h2>
   <div class="test-grid">
     <div class="tc reveal">
-      <div class="tc-logo"><img src="https://images.squarespace-cdn.com/content/v1/68e7f0c7cf092350ffb1b637/de128e67-c86b-4078-8b00-1e00ff440f4d/Sunvair+Group+Logo+2.png" alt="Sunvair Aerospace" class="tc-logo-img" style="height:22px;opacity:.5;filter:brightness(10)"></div>
+      <div class="tc-logo"><img src="https://images.squarespace-cdn.com/content/v1/68e7f0c7cf092350ffb1b637/de128e67-c86b-4078-8b00-1e00ff440f4d/Sunvair+Group+Logo+2.png" alt="Sunvair Aerospace" class="tc-logo-img" width="88" height="22" loading="lazy" style="height:22px;opacity:.5;filter:brightness(10)"></div>
       <p class="tc-text">"Cherry Creek Machine Shop has repeatedly <strong>exceeded our expectations</strong> with responsiveness and commitment to quality. Their team consistently delivers on time, communicates clearly, and produces quality work. We consider them a <strong>trusted partner</strong> and highly recommend their services."</p>
       <div class="tc-meta"><div class="tc-bar"></div><div><div class="tc-author">Director of Quality</div><div class="tc-co">Sunvair Aerospace</div></div></div>
     </div>
     <div class="tc reveal" style="transition-delay:.12s">
-      <div class="tc-logo"><img src="https://images.squarespace-cdn.com/content/v1/68e7f0c7cf092350ffb1b637/f0ea221a-a1d2-46f7-bbe9-808b7a7f40ab/Subsite+Logo.png" alt="Subsite Electronics" class="tc-logo-img" style="height:22px;opacity:.5;filter:brightness(10)"></div>
+      <div class="tc-logo"><img src="https://images.squarespace-cdn.com/content/v1/68e7f0c7cf092350ffb1b637/f0ea221a-a1d2-46f7-bbe9-808b7a7f40ab/Subsite+Logo.png" alt="Subsite Electronics" class="tc-logo-img" width="88" height="22" loading="lazy" style="height:22px;opacity:.5;filter:brightness(10)"></div>
       <p class="tc-text">"We are extremely pleased as to the conditions of the parts that we have been receiving. They are <strong>extremely clean and well made</strong>. The quality and consistency has been outstanding from day one."</p>
       <div class="tc-meta"><div class="tc-bar"></div><div><div class="tc-author">QA Team</div><div class="tc-co">Subsite Electronics</div></div></div>
     </div>
@@ -906,6 +913,8 @@ footer{padding:40px 24px 22px}.footer-grid{grid-template-columns:1fr 1fr;gap:32p
   </div>
   <form class="form-wrap rr" data-netlify="true" name="quote-homepage" method="POST" action="/thank-you" enctype="multipart/form-data" style="transition-delay:.12s">
     <input type="hidden" name="form-name" value="quote-homepage">
+    <input type="file" name="attachment" style="display:none" tabindex="-1" aria-hidden="true">
+    <input type="hidden" name="attached-filename" value="">
     <div class="f-row">
       <input class="f" type="text" placeholder="Your Name *" name="name" aria-label="Your Name" required>
       <input class="f" type="text" placeholder="Company *" name="company" required>
@@ -943,7 +952,7 @@ footer{padding:40px 24px 22px}.footer-grid{grid-template-columns:1fr 1fr;gap:32p
       <!-- Simple attach -->
       <div class="pub-simple show" id="pubSimple">
         <label>
-          <input type="file" id="pubSimpleInput" name="attachment" multiple accept=".pdf,.dxf,.step,.stp,.stl,.obj,.3mf,.iges,.igs,.dwg,.f3d,.x_t,.x_b">
+          <input type="file" id="pubSimpleInput" multiple accept=".pdf,.dxf,.step,.stp,.stl,.obj,.3mf,.iges,.igs,.dwg,.f3d,.x_t,.x_b">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           Attach drawings — PDF, DXF, STEP, STL, DWG, F3D
         </label>
@@ -954,7 +963,6 @@ footer{padding:40px 24px 22px}.footer-grid{grid-template-columns:1fr 1fr;gap:32p
       <div class="pub-3d" id="pub3d">
         <div class="pub-dropzone" id="pubDropzone">
           <input type="file" id="pubFileInput" accept=".step,.stp,.stl,.obj,.3mf,.iges,.igs">
-          <input type="file" id="pubFileHidden" name="attachment" style="display:none">
           <svg class="pub-dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="17 8 12 3 7 8"/>
@@ -1028,7 +1036,7 @@ footer{padding:40px 24px 22px}.footer-grid{grid-template-columns:1fr 1fr;gap:32p
     <span class="footer-copy">© 2025 Cherry Creek Machine. All rights reserved.</span>
     <div class="footer-cert">
       <a href="https://www.ccmachine.com/s/Cherry-Creek-Machine-2023-ISO-9001-2015-Management-System-Certificate.pdf" target="_blank">
-        <img class="footer-iso" src="/mnt/user-data/uploads/iso.png" alt="ISO 9001:2015">
+        <img class="footer-iso" src="/mnt/user-data/uploads/iso.png" alt="ISO 9001:2015" width="60" height="60" loading="lazy">
       </a>
       <span class="footer-cert-text">ISO 9001:2015 Certified</span>
     </div>
@@ -1064,12 +1072,49 @@ if (fi && fl) fi.addEventListener('change', () => {
 });
 
 // ─── FORM SUBMISSION HANDLER ───
+// Always submit via fetch so we can reliably attach files from the 3D viewer or simple attach tab.
+// Files are stored on window._ccmAttachedFiles by the viewer/attach scripts.
 (function() {
   var form = document.querySelector('form[data-netlify="true"]');
   if (!form) return;
-  form.addEventListener('submit', function() {
+  window._ccmAttachedFiles = null;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Always intercept — we handle submission via fetch
     var btn = form.querySelector('[type="submit"]');
     if (btn) { btn.textContent = 'Submitting…'; btn.style.opacity = '0.6'; btn.style.pointerEvents = 'none'; }
+
+    // Set the filename text field so it shows in email notifications
+    var files = window._ccmAttachedFiles;
+    var fnField = form.querySelector('[name="attached-filename"]');
+    if (files && files.length > 0 && fnField) {
+      fnField.value = files.map(function(f){ return f.name; }).join(', ');
+    }
+
+    var fd = new FormData(form);
+
+    // Append stored files (from 3D viewer or simple attach tab)
+    if (files && files.length > 0) {
+      fd.delete('attachment'); // Remove the empty hidden file input
+      for (var i = 0; i < files.length; i++) {
+        fd.append('attachment', files[i], files[i].name);
+      }
+    }
+
+    fetch('/', {
+      method: 'POST',
+      body: fd  // Do NOT set Content-Type header — browser auto-sets multipart boundary
+    }).then(function(res) {
+      if (res.ok) {
+        window.location.href = '/thank-you';
+      } else {
+        alert('Submission failed (' + res.status + ') — please try again or email info@ccmachine.com');
+        if (btn) { btn.textContent = 'Submit Request →'; btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; }
+      }
+    }).catch(function(err) {
+      alert('Network error — please check your connection and try again, or email info@ccmachine.com');
+      if (btn) { btn.textContent = 'Submit Request →'; btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; }
+    });
   });
 })();
 </script>
@@ -1084,11 +1129,20 @@ if (fi && fl) fi.addEventListener('change', () => {
 }
 </script>
 <script type="module">
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { STLLoader }     from 'three/addons/loaders/STLLoader.js';
-import { OBJLoader }     from 'three/addons/loaders/OBJLoader.js';
-import { ThreeMFLoader } from 'three/addons/loaders/3MFLoader.js';
+/* ── Three.js loaded on-demand when user opens 3D tab (saves ~264KB on initial load) ── */
+let THREE, OrbitControls, STLLoader, OBJLoader, ThreeMFLoader;
+let libsLoaded = false;
+async function loadThreeJS() {
+  if (libsLoaded) return;
+  [THREE, { OrbitControls }, { STLLoader }, { OBJLoader }, { ThreeMFLoader }] = await Promise.all([
+    import('three'),
+    import('three/addons/controls/OrbitControls.js'),
+    import('three/addons/loaders/STLLoader.js'),
+    import('three/addons/loaders/OBJLoader.js'),
+    import('three/addons/loaders/3MFLoader.js')
+  ]);
+  libsLoaded = true;
+}
 
 /* ── tab switching ── */
 window.pubSwitchTab = function(tab) {
@@ -1096,10 +1150,10 @@ window.pubSwitchTab = function(tab) {
   document.getElementById('pubTab3d').classList.toggle('active', tab==='3d');
   document.getElementById('pubSimple').classList.toggle('show', tab==='simple');
   document.getElementById('pub3d').classList.toggle('show', tab==='3d');
-  /* Clear the other tab's file input so we don't send duplicates */
-  if (tab==='simple') { document.getElementById('pubFileHidden').value=''; }
-  else { document.getElementById('pubSimpleInput').value=''; var el=document.getElementById('pubSimpleAttached'); if(el) el.style.display='none'; }
-  if (tab==='3d' && !scene) initScene();
+  /* Clear the other tab's file input and stored files so we don't send duplicates */
+  window._ccmAttachedFiles = null;
+  if (tab!=='simple') { document.getElementById('pubSimpleInput').value=''; var el=document.getElementById('pubSimpleAttached'); if(el) el.style.display='none'; }
+  if (tab==='3d' && !scene) { loadThreeJS().then(()=> initScene()); }
 };
 
 /* ── simple attach ── */
@@ -1107,6 +1161,8 @@ document.getElementById('pubSimpleInput').addEventListener('change', function() 
   const names = Array.from(this.files).map(f=>f.name).join(', ');
   const el = document.getElementById('pubSimpleAttached');
   if (names) { el.textContent = '✓ ' + names; el.style.display = 'block'; }
+  /* Store files for the fetch-based form submission */
+  window._ccmAttachedFiles = Array.from(this.files);
 });
 
 /* ── 3D viewer state ── */
@@ -1143,7 +1199,7 @@ document.getElementById('pubBtnClear').addEventListener('click', ()=>{
   vtoolbar.style.display='none';
   if(model){ scene.remove(model); model.traverse(c=>{ if(c.isMesh) c.geometry.dispose(); }); model=null; }
   finput.value='';
-  document.getElementById('pubFileHidden').value='';
+  window._ccmAttachedFiles = null;
 });
 
 function initScene() {
@@ -1176,12 +1232,11 @@ function initScene() {
 }
 
 async function go(file) {
-  /* ── Copy file to hidden form input so it submits with the quote ── */
-  try {
-    const dt = new DataTransfer();
-    dt.items.add(file);
-    document.getElementById('pubFileHidden').files = dt.files;
-  } catch(e) { /* fallback: old browsers just won't attach */ }
+  /* ── Store file for the fetch-based form submission ── */
+  window._ccmAttachedFiles = [file];
+
+  /* Ensure Three.js is loaded */
+  await loadThreeJS();
 
   const name=file.name, ext=name.split('.').pop().toLowerCase();
   dropzone.style.display='none';
