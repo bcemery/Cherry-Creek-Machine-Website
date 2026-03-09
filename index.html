@@ -247,7 +247,7 @@ select.f option{background:var(--steel)}
 .upload-zone input{display:none}
 .uz-label{font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
 .uz-red{color:var(--red)}
-.btn-submit{background:var(--red);color:#fff;font-family:var(--display);font-size:14px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:15px;border-radius:2px;text-align:center;display:block;margin-top:4px;transition:background 0.2s;text-decoration:none}
+.btn-submit{background:var(--red);color:#fff;font-family:var(--display);font-size:14px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:15px;border:none;border-radius:2px;text-align:center;display:block;width:100%;margin-top:4px;transition:background 0.2s;text-decoration:none;cursor:pointer}
 .btn-submit:hover{background:var(--red2)}
 .f-privacy{display:flex;align-items:center;justify-content:center;gap:7px;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding-top:4px}
 footer{background:var(--black);border-top:1px solid var(--border);padding:52px 56px 24px}
@@ -495,74 +495,188 @@ footer{padding:40px 24px 22px}.footer-grid{grid-template-columns:1fr 1fr;gap:32p
 }
 
 
-/* ─── MOBILE HAMBURGER MENU ─── */
-.nav-hamburger{display:none;background:none;border:1px solid var(--border2);border-radius:2px;width:40px;height:40px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;z-index:400;position:relative}
-.ham-line{display:block;width:18px;height:1.5px;background:var(--white);border-radius:1px;transition:transform 0.3s cubic-bezier(0.16,1,0.3,1),opacity 0.2s}
-.nav-hamburger.open .ham-line:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.nav-hamburger.open .ham-line:nth-child(2){opacity:0}
-.nav-hamburger.open .ham-line:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-@media(max-width:960px){.nav-hamburger{display:flex}}
-.mobile-menu{position:fixed;inset:0;z-index:350;background:rgba(20,18,16,0.98);backdrop-filter:blur(20px);opacity:0;visibility:hidden;transition:opacity 0.35s cubic-bezier(0.16,1,0.3,1),visibility 0.35s;overflow-y:auto;-webkit-overflow-scrolling:touch}
-.mobile-menu.open{opacity:1;visibility:visible}
-.mm-inner{padding:100px 32px 48px;display:flex;flex-direction:column;gap:0}
-.mm-link{font-family:var(--display);font-size:clamp(28px,6vw,42px);font-weight:800;text-transform:uppercase;color:var(--white);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border);transition:color 0.2s;letter-spacing:-0.01em;opacity:0;transform:translateY(16px);transition:color 0.2s,opacity 0.4s,transform 0.4s}
-.mobile-menu.open .mm-link{opacity:1;transform:none}
-.mm-link:hover,.mm-link:active{color:var(--red)}
-.mm-sub-link{font-family:var(--display);font-size:clamp(16px,3.5vw,22px);font-weight:600;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:6px 0 6px 20px;border-bottom:1px solid var(--border);transition:color 0.2s;letter-spacing:0.02em;opacity:0;transform:translateY(16px);transition:color 0.2s,opacity 0.4s,transform 0.4s}
-.mobile-menu.open .mm-sub-link{opacity:1;transform:none}
-.mm-sub-link::before{content:'—';color:var(--red);margin-right:10px;font-weight:400}
-.mm-sub-link:hover,.mm-sub-link:active{color:var(--white)}
-.mm-cta{display:inline-flex;align-items:center;justify-content:center;background:var(--red);color:#fff;font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:16px 32px;text-decoration:none;border-radius:2px;margin-top:24px;transition:background 0.2s;opacity:0;transform:translateY(16px);transition:background 0.2s,opacity 0.4s,transform 0.4s}
-.mobile-menu.open .mm-cta{opacity:1;transform:none}
-.mm-cta:hover{background:var(--red2)}
-.mm-contact{margin-top:20px;display:flex;flex-direction:column;gap:6px;opacity:0;transform:translateY(16px);transition:opacity 0.4s,transform 0.4s}
-.mobile-menu.open .mm-contact{opacity:1;transform:none}
-.mm-contact a{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
-.mm-contact a:hover{color:var(--red)}
-
-/* Stagger animations */
-.mobile-menu.open .mm-link:nth-child(1){transition-delay:0.04s}
-.mobile-menu.open .mm-link:nth-child(2),.mobile-menu.open .mm-sub-link:nth-child(3){transition-delay:0.08s}
-.mobile-menu.open .mm-sub-link:nth-child(4){transition-delay:0.12s}
-.mobile-menu.open .mm-sub-link:nth-child(5){transition-delay:0.16s}
-.mobile-menu.open .mm-link:nth-child(6){transition-delay:0.20s}
-.mobile-menu.open .mm-link:nth-child(7){transition-delay:0.24s}
-.mobile-menu.open .mm-link:nth-child(8){transition-delay:0.28s}
-.mobile-menu.open .mm-link:nth-child(9){transition-delay:0.32s}
-.mobile-menu.open .mm-cta{transition-delay:0.36s}
-.mobile-menu.open .mm-contact{transition-delay:0.40s}
-
-/* ─── BACK TO TOP ─── */
-.back-to-top{position:fixed;bottom:28px;right:28px;z-index:200;width:44px;height:44px;background:var(--steel);border:1px solid var(--border2);border-radius:2px;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity 0.35s,visibility 0.35s,transform 0.35s,background 0.2s,color 0.2s,border-color 0.2s}
-.back-to-top.visible{opacity:1;visibility:visible;transform:none}
-.back-to-top:hover{background:var(--red);border-color:var(--red);color:#fff}
-
-/* ─── PAGE TRANSITION ─── */
-.page-transition{position:fixed;inset:0;z-index:9999;background:var(--black);opacity:0;pointer-events:none;transition:opacity 0.3s cubic-bezier(0.16,1,0.3,1)}
-.page-transition.active{opacity:1;pointer-events:all}
-body{animation:pageIn 0.35s ease both}
-@keyframes pageIn{from{opacity:0}to{opacity:1}}
-
-/* ─── FOOTER ISO SVG FIX ─── */
-.footer-iso{color:var(--white)}
+/* ── INTEGRATED 3D VIEWER / UPLOAD ── */
+.upload-zone{display:none} /* replaced by integrated viewer */
+.part-upload-block{margin-bottom:12px}
+.pub-tabs{display:flex;gap:0;margin-bottom:0;border:1px solid var(--border);border-radius:3px 3px 0 0;overflow:hidden}
+.pub-tab{flex:1;padding:10px 16px;background:var(--panel);font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all .2s;text-align:center;border:none;border-right:1px solid var(--border)}
+.pub-tab:last-child{border-right:none}
+.pub-tab:hover{color:var(--text)}
+.pub-tab.active{background:var(--steel);color:var(--white)}
+.pub-tab.active span{color:var(--red)}
+/* Simple attach */
+.pub-simple{background:var(--steel);border:1px solid var(--border);border-top:none;border-radius:0 0 3px 3px;padding:14px;display:none}
+.pub-simple.show{display:block}
+.pub-simple label{display:flex;align-items:center;gap:10px;cursor:pointer;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.pub-simple label:hover{color:var(--red)}
+.pub-simple input{display:none}
+.pub-simple-attached{font-family:var(--mono);font-size:9px;color:var(--red);margin-top:6px;letter-spacing:.06em}
+/* 3D viewer tab */
+.pub-3d{background:var(--steel);border:1px solid var(--border);border-top:none;border-radius:0 0 3px 3px;display:none;flex-direction:column}
+.pub-3d.show{display:flex}
+/* drop zone inside form */
+.pub-dropzone{padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;border-bottom:1px solid var(--border);transition:background .2s}
+.pub-dropzone:hover,.pub-dropzone.drag-over{background:rgba(184,36,15,.06)}
+.pub-dropzone input{display:none}
+.pub-dz-icon{width:32px;height:32px;color:var(--muted);transition:color .2s}
+.pub-dropzone:hover .pub-dz-icon,.pub-dropzone.drag-over .pub-dz-icon{color:var(--red)}
+.pub-dz-title{font-family:var(--display);font-size:16px;font-weight:800;text-transform:uppercase;color:var(--white);letter-spacing:.04em}
+.pub-dz-sub{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+/* inline 3D canvas */
+.pub-canvas-wrap{position:relative;width:100%;aspect-ratio:4/3;background:var(--dark);display:none}
+.pub-canvas-wrap.show{display:block}
+.pub-canvas-wrap canvas{width:100%!important;height:100%!important;display:block}
+.pub-canvas-label{position:absolute;top:8px;right:10px;font-family:var(--mono);font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:rgba(20,18,16,.8);backdrop-filter:blur(4px);padding:3px 8px;border-radius:2px;z-index:5;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pub-canvas-spinner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--dark);z-index:10;transition:opacity .4s}
+.pub-canvas-spinner.hidden{opacity:0;pointer-events:none}
+.pub-spin{width:28px;height:28px;border:2px solid var(--border2);border-top-color:var(--red);border-radius:50%;animation:pubspin .8s linear infinite;margin-bottom:10px}
+@keyframes pubspin{to{transform:rotate(360deg)}}
+.pub-spin-txt{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+/* viewer toolbar inside form */
+.pub-vtoolbar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:var(--panel);border-top:1px solid var(--border)}
+.pub-vbtn{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:transparent;border:1px solid var(--border);border-radius:2px;padding:4px 10px;cursor:pointer;transition:all .15s}
+.pub-vbtn:hover{color:var(--text);border-color:var(--border2)}
+.pub-vbtn.active{color:var(--red);border-color:var(--red);background:rgba(184,36,15,.08)}
+.pub-vspacer{flex:1}
+.pub-vinfo{font-family:var(--mono);font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 
 
-/* ─── CAPABILITIES DROPDOWN ─── */
-.nav-dropdown{position:relative}
-.nav-dropdown>a{cursor:pointer}
-.dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:200px;background:rgba(28,26,24,0.98);border:1px solid var(--border2);border-top:2px solid var(--red);backdrop-filter:blur(18px);padding:8px 0;opacity:0;visibility:hidden;transition:opacity 0.25s,visibility 0.25s,transform 0.25s;transform:translateX(-50%) translateY(8px);z-index:400;pointer-events:none}
-.nav-dropdown:hover .dropdown-menu,.dropdown-menu:hover{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
-.dropdown-menu a{display:block;padding:10px 20px;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s,background 0.2s;white-space:nowrap}
-.dropdown-menu a:hover{color:var(--white);background:rgba(184,36,15,0.08)}
-.dropdown-menu a::before{content:'— ';color:var(--red);font-weight:400}
-/* Prevent nav-links underline on dropdown items */
-.dropdown-menu a::after{display:none!important}
-.nav-dropdown>a{padding-bottom:20px;margin-bottom:-20px}
 
+/* ── 3D VIEWER HERO TEASER STRIP ── */
+.viewer-teaser{
+  position:relative;
+  background:var(--black);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:0 56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  overflow:hidden;
+  animation:fadeUp 0.6s 1.3s ease both;
+  opacity:0;
+}
+/* subtle animated gradient sweep */
+.viewer-teaser::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(184,36,15,.06) 50%,transparent 100%);
+  background-size:200% 100%;
+  animation:teaserSweep 4s ease-in-out infinite;
+}
+@keyframes teaserSweep{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
+.vt-left{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:14px 0;
+  position:relative;
+  z-index:1;
+}
+.vt-icon-wrap{
+  width:40px;height:40px;
+  border:1px solid var(--border2);
+  border-radius:3px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  background:var(--steel);
+}
+.vt-icon-wrap svg{width:20px;height:20px;stroke:var(--red);fill:none;stroke-width:1.5;stroke-linecap:round}
+.vt-copy{}
+.vt-headline{
+  font-family:var(--display);
+  font-size:14px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--white);
+  margin-bottom:2px;
+}
+.vt-sub{
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.vt-sub strong{color:var(--red);font-weight:400}
+.vt-badge{
+  font-family:var(--mono);
+  font-size:8px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--red);
+  background:rgba(184,36,15,.1);
+  border:1px solid rgba(184,36,15,.25);
+  padding:4px 12px;
+  border-radius:2px;
+  white-space:nowrap;
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+}
+.vt-action{
+  font-family:var(--display);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--white);
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 20px;
+  border:1px solid var(--border2);
+  border-radius:2px;
+  transition:border-color .2s,color .2s;
+  white-space:nowrap;
+  flex-shrink:0;
+  position:relative;
+  z-index:1;
+}
+.vt-action:hover{border-color:var(--red);color:var(--red)}
+.vt-formats{
+  display:flex;gap:6px;
+  position:relative;z-index:1;
+  flex-shrink:0;
+}
+.vt-fmt{
+  font-family:var(--mono);
+  font-size:8px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  border:1px solid var(--border);
+  color:var(--muted);
+  border-radius:2px;
+}
+@media(max-width:960px){
+  .viewer-teaser{padding:0 24px;flex-wrap:wrap;gap:12px}
+  .vt-formats{display:none}
+}
+
+/* ── FORM TAB refinements ── */
+.pub-tabs{border-radius:3px 3px 0 0}
+.pub-tab{font-size:10px;padding:11px 16px;position:relative}
+.pub-tab.active::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:2px;
+  background:var(--red);
+}
+/* make 3D canvas taller in form */
+.pub-canvas-wrap{aspect-ratio:16/9}
 
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":["LocalBusiness","MachineShop"],"name":"Cherry Creek Machine","alternateName":"CCM","description":"ISO 9001:2015 certified CNC machine shop in Tulsa, Oklahoma. Precision CNC milling, CNC turning, and waterjet cutting for aerospace, oil and gas, defense, and industrial manufacturers.","url":"https://www.ccmachine.com","telephone":"+1-918-925-9780","email":"info@ccmachine.com","image":"https://images.squarespace-cdn.com/content/v1/68e7f0c7cf092350ffb1b637/618ed1c2-0900-413e-bfc1-197a2d2e472b/cherry-creek-machine-cnc-milling--lathe-tulsa-018.jpg","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"2045 E. 59th Place North","addressLocality":"Tulsa","addressRegion":"OK","postalCode":"74136","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":36.2304,"longitude":-95.9928},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"17:00"}],"foundingDate":"2017","hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"certification","name":"ISO 9001:2015"},"areaServed":[{"@type":"City","name":"Tulsa","containedInPlace":{"@type":"State","name":"Oklahoma"}},{"@type":"State","name":"Oklahoma"},{"@type":"Country","name":"United States"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"CNC Machining Services","itemListElement":[{"@type":"OfferCatalog","name":"CNC Milling","description":"Precision CNC milling on Haas vertical machining centers, tolerances to ±0.0005 inches"},{"@type":"OfferCatalog","name":"CNC Turning","description":"CNC turning and lathe work on Haas turning centers for shafts, bushings, and cylindrical parts"},{"@type":"OfferCatalog","name":"Waterjet Cutting","description":"Precision waterjet cutting for metals, composites, and specialty materials"}]},"knowsAbout":["CNC Machining","CNC Milling","CNC Turning","Waterjet Cutting","Precision Machining","Haas CNC","ISO 9001:2015","Aerospace Machining","Oil and Gas Machining","Defense Manufacturing"],"sameAs":["https://www.facebook.com/CherryCreekMachine","https://www.linkedin.com/company/ccmachine/","https://www.instagram.com/cherrycreekmachine/","https://x.com/ccmachineusa"]}
+{"@context":"https://schema.org","@type":["LocalBusiness","MachineShop"],"name":"Cherry Creek Machine","url":"https://www.ccmachine.com","telephone":"+1-918-925-9780","email":"info@ccmachine.com","address":{"@type":"PostalAddress","streetAddress":"2045 E. 59th Place North","addressLocality":"Tulsa","addressRegion":"OK","postalCode":"74136","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":36.2304,"longitude":-95.9928},"foundingDate":"2017","sameAs":["https://www.facebook.com/CherryCreekMachine","https://www.linkedin.com/company/ccmachine/","https://www.instagram.com/cherrycreekmachine/"]}
 </script>
 </head>
 <body>
@@ -574,41 +688,14 @@ body{animation:pageIn 0.35s ease both}
 <nav id="nav">
   <a href="/" class="nav-brand"><svg class="nav-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207.0438 210.4258"><path fill="#B8240F" d="M120.2223,125.9035c-4.2159,3.0642-9.4008,4.8762-15.0118,4.8762-14.1135,0-25.559-11.4454-25.559-25.5657s11.4454-25.5657,25.559-25.5657c6.5414,0,12.5059,2.4595,17.0272,6.5002h12.6493l6.2189-6.2246-10.6053-10.6053-7.3995,7.3928c-3.1453-1.9826-6.6468-3.4545-10.3835-4.308v-10.4507h-15.0074v10.4507c-3.7367.8535-7.245,2.3253-10.3903,4.308l-7.3928-7.3928-10.612,10.6053,7.3995,7.3995c-1.9826,3.1453-3.4544,6.6468-4.308,10.3902h-10.4575v15.0007h10.4575c.8535,3.7435,2.3254,7.245,4.308,10.3903l-7.3995,7.3928,10.612,10.612,7.3928-7.3995c3.1453,1.9826,6.6535,3.4612,10.3903,4.308v10.4575h15.0074v-10.4575c3.7367-.8535,7.2382-2.3254,10.3835-4.308l7.3995,7.3995,10.6053-10.612-4.5939-4.5939h-16.2897Z"/><path fill="#f0ece6" d="M150.9524,125.9035c-7.8846,17.4014-25.3919,29.5136-45.7395,29.5136-27.727,0-50.2042-22.4772-50.2042-50.2042s22.4772-50.2042,50.2042-50.2042c20.9767,0,38.9397,12.8695,46.4471,31.1399h5.3838c-7.763-21.0986-28.0386-36.1485-51.8309-36.1485-30.4932,0-55.2129,24.7196-55.2129,55.2129s24.7197,55.2129,55.2129,55.2129c23.1742,0,43.0009-14.2839,51.1897-34.5222h-5.4501Z"/></svg><span class="nav-wordmark">Cherry Creek<br><span class="nav-wordmark-sub">Machine</span></span></a>
   <ul class="nav-links">
-    <li class="nav-dropdown"><a href="/capabilities">Capabilities ▾</a>
-      <div class="dropdown-menu">
-        <a href="/cnc-milling">CNC Milling</a>
-        <a href="/cnc-turning">CNC Turning</a>
-        <a href="/waterjet-cutting">Waterjet Cutting</a>
-      </div>
-    </li>
+    <li><a href="/capabilities">Capabilities</a></li>
     <li><a href="/quality">Quality</a></li>
     <li><a href="/equipment">Equipment</a></li>
     <li><a href="/about">About</a></li>
     <li><a href="/careers">Careers</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get a Quote →</a>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
-    <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
-  </button>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mm-inner">
-    <a href="/" class="mm-link">Home</a>
-    <a href="/capabilities" class="mm-link">Capabilities</a>
-    <a href="/cnc-milling" class="mm-sub-link">CNC Milling</a>
-    <a href="/cnc-turning" class="mm-sub-link">CNC Turning</a>
-    <a href="/waterjet-cutting" class="mm-sub-link">Waterjet Cutting</a>
-    <a href="/quality" class="mm-link">Quality</a>
-    <a href="/equipment" class="mm-link">Equipment</a>
-    <a href="/about" class="mm-link">About</a>
-    <a href="/careers" class="mm-link">Careers</a>
-    <a href="#contact" class="mm-cta" id="mmCta">Get a Quote →</a>
-    <div class="mm-contact">
-      <a href="tel:9189259780">(918) 925-9780</a>
-      <a href="mailto:info@ccmachine.com">info@ccmachine.com</a>
-    </div>
-  </div>
-</div>
 <section class="hero" id="hero">
   <video class="hero-video" autoplay muted loop playsinline preload="metadata">
     <source src="/hero-video-small.mp4" type="video/mp4">
@@ -633,6 +720,32 @@ body{animation:pageIn 0.35s ease both}
     <div class="hrp-cell"><div class="hrp-val">ISO</div><div class="hrp-lbl">9001:2015 Certified</div></div>
   </div>
 </section>
+<!-- ── 3D VIEWER TEASER STRIP ── -->
+<div class="viewer-teaser">
+  <div class="vt-left">
+    <div class="vt-icon-wrap">
+      <svg viewBox="0 0 24 24">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+        <line x1="12" y1="22.08" x2="12" y2="12"/>
+      </svg>
+    </div>
+    <div class="vt-copy">
+      <div class="vt-headline">Preview Your Part in 3D — Before You Quote</div>
+      <div class="vt-sub">Drop your CAD file directly into our quote form &nbsp;·&nbsp; <strong>STEP · STL · OBJ · 3MF · IGES</strong></div>
+    </div>
+  </div>
+  <div class="vt-formats">
+    <span class="vt-fmt">STEP</span>
+    <span class="vt-fmt">STL</span>
+    <span class="vt-fmt">OBJ</span>
+    <span class="vt-fmt">3MF</span>
+    <span class="vt-fmt">IGES</span>
+  </div>
+  <span class="vt-badge">New — Oklahoma's Only</span>
+  <a href="#contact" class="vt-action">Try It Now →</a>
+</div>
+
 <div class="stats-band reveal">
   <div class="sb"><div class="sb-num" data-count="30" data-suffix="+">0+</div><div class="sb-lbl">Years Experience</div></div>
   <div class="sb"><div class="sb-num" data-count="8">0</div><div class="sb-lbl">Haas VMCs</div></div>
@@ -792,7 +905,8 @@ body{animation:pageIn 0.35s ease both}
     <div class="cti-row"><span class="cti-lbl">Address</span><span class="cti-val">2045 E. 59th Place North, Tulsa OK 74136</span></div>
   </div>
   <form class="form-wrap rr" data-netlify="true" name="quote-homepage" method="POST" action="/thank-you" enctype="multipart/form-data" style="transition-delay:.12s">
-    <input type="hidden" name="form-name" value="quote-homepage">    <div class="f-row">
+    <input type="hidden" name="form-name" value="quote-homepage">
+    <div class="f-row">
       <input class="f" type="text" placeholder="Your Name *" name="name" aria-label="Your Name" required>
       <input class="f" type="text" placeholder="Company *" name="company" required>
     </div>
@@ -810,15 +924,64 @@ body{animation:pageIn 0.35s ease both}
     </select>
     <div class="f-row">
       <input class="f" type="text" placeholder="Material(s)" name="material">
-      <input class="f" type="text" placeholder="Quantity" name="quantity" aria-label="Quantity">
+      <input class="f" type="text" placeholder="Quantity" name="quantity">
     </div>
-    <input class="f" type="text" placeholder="Tolerance Requirements" name="tolerance">
-    <textarea class="f tall" placeholder="Project details, timeline, special requirements..." name="details" aria-label="Project Details"></textarea>
-    <label class="upload-zone">
-      <input type="file" id="fileInput" name="attachment" multiple>
-      <span class="uz-label">📎 <span id="fileLabel" class="uz-red">Attach drawings (PDF, DXF, STEP)</span></span>
-    </label>
-    <button type="submit" class="btn-submit" id="formSubmit">Submit Request →</button>
+    <input class="f" type="text" placeholder="Tolerance Requirements" name="tolerances">
+    <textarea class="f tall" placeholder="Project details, timeline, special requirements..." name="details"></textarea>
+
+    <!-- ── INTEGRATED FILE UPLOAD + 3D VIEWER ── -->
+    <div class="part-upload-block">
+      <div class="pub-tabs">
+        <button class="pub-tab active" id="pubTabSimple" onclick="pubSwitchTab('simple')">
+          <span>📎</span> Attach Files
+        </button>
+        <button class="pub-tab" id="pubTab3d" onclick="pubSwitchTab('3d')">
+          <span>⬡</span> Preview in 3D
+        </button>
+      </div>
+
+      <!-- Simple attach -->
+      <div class="pub-simple show" id="pubSimple">
+        <label>
+          <input type="file" id="pubSimpleInput" multiple accept=".pdf,.dxf,.step,.stp,.stl,.obj,.3mf,.iges,.igs,.dwg">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Attach drawings — PDF, DXF, STEP, STL, DWG
+        </label>
+        <div class="pub-simple-attached" id="pubSimpleAttached" style="display:none"></div>
+      </div>
+
+      <!-- 3D preview -->
+      <div class="pub-3d" id="pub3d">
+        <div class="pub-dropzone" id="pubDropzone">
+          <input type="file" id="pubFileInput" accept=".step,.stp,.stl,.obj,.3mf,.iges,.igs">
+          <svg class="pub-dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          <div class="pub-dz-title">Drop 3D File to Preview</div>
+          <div class="pub-dz-sub">STEP · STL · OBJ · 3MF · IGES</div>
+        </div>
+        <div class="pub-canvas-wrap" id="pubCanvasWrap">
+          <div class="pub-canvas-label" id="pubCanvasLabel">—</div>
+          <div class="pub-canvas-spinner" id="pubSpinner">
+            <div class="pub-spin"></div>
+            <div class="pub-spin-txt" id="pubSpinTxt">Parsing geometry…</div>
+          </div>
+        </div>
+        <div class="pub-vtoolbar" id="pubVtoolbar" style="display:none">
+          <button class="pub-vbtn" id="pubBtnReset">Reset</button>
+          <button class="pub-vbtn" id="pubBtnWire">Wireframe</button>
+          <button class="pub-vbtn" id="pubBtnClear">✕ Clear</button>
+          <div class="pub-vspacer"></div>
+          <span class="pub-vinfo" id="pubVinfo">—</span>
+        </div>
+
+      </div>
+    </div>
+    <!-- ── END INTEGRATED VIEWER ── -->
+
+    <button type="submit" class="btn-submit">Submit Request →</button>
     <div class="f-privacy">🔒 Your information is never shared or sold</div>
   </form>
 </section>
@@ -829,10 +992,10 @@ body{animation:pageIn 0.35s ease both}
       <div class="footer-tag"><svg class="flag-mini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20"><rect width="30" height="20" fill="#B22234"/><rect y="1.54" width="30" height="1.54" fill="#fff"/><rect y="3.08" width="30" height="1.54" fill="#B22234"/><rect y="4.62" width="30" height="1.54" fill="#fff"/><rect y="6.15" width="30" height="1.54" fill="#B22234"/><rect y="7.69" width="30" height="1.54" fill="#fff"/><rect y="9.23" width="30" height="1.54" fill="#B22234"/><rect y="10.77" width="30" height="1.54" fill="#fff"/><rect y="12.31" width="30" height="1.54" fill="#B22234"/><rect y="13.85" width="30" height="1.54" fill="#fff"/><rect y="15.38" width="30" height="1.54" fill="#B22234"/><rect y="16.92" width="30" height="1.54" fill="#fff"/><rect y="18.46" width="30" height="1.54" fill="#B22234"/><rect width="12" height="10.77" fill="#3C3B6E"/></svg> Precision CNC Machining · Tulsa, Oklahoma · ISO 9001:2015</div>
       <p class="footer-desc">ISO 9001:2015 certified CNC machining in Tulsa, OK. Serving aerospace, oil &amp; gas, defense, and industrial manufacturers since 2017.</p>
       <div class="footer-socials">
-        <a href="https://www.facebook.com/CherryCreekMachine" class="fsocial" aria-label="Facebook">f</a>
-        <a href="https://www.instagram.com/cherrycreekmachine/" class="fsocial" aria-label="Instagram">ig</a>
-        <a href="https://www.linkedin.com/company/ccmachine/" class="fsocial" aria-label="LinkedIn">in</a>
-        <a href="https://x.com/ccmachineusa" class="fsocial" aria-label="X (Twitter)">𝕏</a>
+        <a href="https://www.facebook.com/CherryCreekMachine" class="fsocial">f</a>
+        <a href="https://www.instagram.com/cherrycreekmachine/" class="fsocial">ig</a>
+        <a href="https://www.linkedin.com/company/ccmachine/" class="fsocial">in</a>
+        <a href="https://x.com/ccmachineusa" class="fsocial">𝕏</a>
       </div>
     </div>
     <div>
@@ -861,14 +1024,10 @@ body{animation:pageIn 0.35s ease both}
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2026 Cherry Creek Machine. All rights reserved.</span>
+    <span class="footer-copy">© 2025 Cherry Creek Machine. All rights reserved.</span>
     <div class="footer-cert">
       <a href="https://www.ccmachine.com/s/Cherry-Creek-Machine-2023-ISO-9001-2015-Management-System-Certificate.pdf" target="_blank">
-        <svg class="footer-iso" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:28px;width:auto;opacity:0.7">
-        <rect x="0.5" y="0.5" width="79" height="27" rx="2" stroke="currentColor" stroke-opacity="0.3"/>
-        <text x="40" y="11" text-anchor="middle" fill="currentColor" font-family="'DM Mono',monospace" font-size="7" letter-spacing="0.08em" opacity="0.7">ISO</text>
-        <text x="40" y="22" text-anchor="middle" fill="currentColor" font-family="'DM Mono',monospace" font-size="7" letter-spacing="0.05em" opacity="0.7">9001:2015</text>
-      </svg>
+        <img class="footer-iso" src="/mnt/user-data/uploads/iso.png" alt="ISO 9001:2015">
       </a>
       <span class="footer-cert-text">ISO 9001:2015 Certified</span>
     </div>
@@ -902,95 +1061,198 @@ const fi = document.getElementById('fileInput'), fl = document.getElementById('f
 if (fi && fl) fi.addEventListener('change', () => {
   fl.textContent = fi.files.length === 1 ? fi.files[0].name : fi.files.length + ' files attached';
 });
-</script>
 
-
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L3 8.5M8 3l5 5.5M8 3v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-</button>
-<div class="page-transition" id="pageTransition"></div>
-<script>
-
-
-// ─── DROPDOWN TOUCH SUPPORT ───
-document.querySelectorAll('.nav-dropdown > a').forEach(a => {
-  a.addEventListener('click', function(e) {
-    if (window.innerWidth > 960) {
-      // On first tap on touch devices, show dropdown; on second tap, navigate
-      const dd = this.parentElement.querySelector('.dropdown-menu');
-      if (dd && !dd.matches(':hover') && 'ontouchstart' in window) {
-        e.preventDefault();
-        dd.style.opacity = '1';
-        dd.style.visibility = 'visible';
-        dd.style.transform = 'translateX(-50%) translateY(0)';
-        dd.style.pointerEvents = 'auto';
-      }
-    }
-  });
-});
-
-// ─── MOBILE MENU ───
-const ham = document.getElementById('navHamburger');
-const mm = document.getElementById('mobileMenu');
-if (ham && mm) {
-  ham.addEventListener('click', () => {
-    const open = ham.classList.toggle('open');
-    mm.classList.toggle('open');
-    ham.setAttribute('aria-expanded', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-  const mmCta = document.getElementById('mmCta');
-  if (mmCta) mmCta.addEventListener('click', () => {
-    ham.classList.remove('open');
-    mm.classList.remove('open');
-    ham.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  });
-  mm.querySelectorAll('.mm-link, .mm-sub-link').forEach(a => {
-    a.addEventListener('click', () => {
-      ham.classList.remove('open');
-      mm.classList.remove('open');
-      ham.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
-}
-
-// ─── BACK TO TOP ───
-const btt = document.getElementById('backToTop');
-if (btt) {
-  window.addEventListener('scroll', () => {
-    btt.classList.toggle('visible', window.scrollY > 600);
-  }, {passive:true});
-  btt.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-}
-
-// ─── PAGE TRANSITIONS ───
-const pt = document.getElementById('pageTransition');
-if (pt) {
-  document.querySelectorAll('a[href]').forEach(a => {
-    const href = a.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('http') || a.getAttribute('target') === '_blank') return;
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      pt.classList.add('active');
-      setTimeout(() => { window.location.href = href; }, 280);
-    });
-  });
-}
 // ─── FORM SUBMISSION HANDLER ───
 (function() {
   var form = document.querySelector('form[data-netlify="true"]');
   if (!form) return;
   form.addEventListener('submit', function() {
     var btn = form.querySelector('[type="submit"]');
-    if (btn) {
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      btn.style.opacity = '0.6';
-    }
+    if (btn) { btn.textContent = 'Submitting…'; btn.style.opacity = '0.6'; btn.style.pointerEvents = 'none'; }
   });
 })();
 </script>
+
+<!-- ── INTEGRATED 3D VIEWER JS ── -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { STLLoader }     from 'three/addons/loaders/STLLoader.js';
+import { OBJLoader }     from 'three/addons/loaders/OBJLoader.js';
+import { ThreeMFLoader } from 'three/addons/loaders/3MFLoader.js';
+
+/* ── tab switching ── */
+window.pubSwitchTab = function(tab) {
+  document.getElementById('pubTabSimple').classList.toggle('active', tab==='simple');
+  document.getElementById('pubTab3d').classList.toggle('active', tab==='3d');
+  document.getElementById('pubSimple').classList.toggle('show', tab==='simple');
+  document.getElementById('pub3d').classList.toggle('show', tab==='3d');
+  if (tab==='3d' && !scene) initScene();
+};
+
+/* ── simple attach ── */
+document.getElementById('pubSimpleInput').addEventListener('change', function() {
+  const names = Array.from(this.files).map(f=>f.name).join(', ');
+  const el = document.getElementById('pubSimpleAttached');
+  if (names) { el.textContent = '✓ ' + names; el.style.display = 'block'; }
+});
+
+/* ── 3D viewer state ── */
+let scene, camera, renderer, controls, model, wireOn=false, cam0, tgt0, occtP=null;
+const matS = ()=> new THREE.MeshStandardMaterial({color:0x9a9590,metalness:.75,roughness:.3});
+const matW = ()=> new THREE.MeshStandardMaterial({color:0xB8240F,metalness:.4,roughness:.5,wireframe:true});
+
+const dropzone  = document.getElementById('pubDropzone');
+const finput    = document.getElementById('pubFileInput');
+const canvasWrap= document.getElementById('pubCanvasWrap');
+const clabel    = document.getElementById('pubCanvasLabel');
+const spinner   = document.getElementById('pubSpinner');
+const spinTxt   = document.getElementById('pubSpinTxt');
+const vtoolbar  = document.getElementById('pubVtoolbar');
+const vinfo     = document.getElementById('pubVinfo');
+
+dropzone.addEventListener('click', ()=> finput.click());
+dropzone.addEventListener('dragover', e=>{ e.preventDefault(); dropzone.classList.add('drag-over'); });
+dropzone.addEventListener('dragleave', ()=> dropzone.classList.remove('drag-over'));
+dropzone.addEventListener('drop', e=>{ e.preventDefault(); dropzone.classList.remove('drag-over'); if(e.dataTransfer.files[0]) go(e.dataTransfer.files[0]); });
+finput.addEventListener('change', e=>{ if(e.target.files[0]) go(e.target.files[0]); });
+
+document.getElementById('pubBtnReset').addEventListener('click', ()=>{
+  if(!controls||!cam0) return;
+  camera.position.copy(cam0); controls.target.copy(tgt0); controls.update();
+});
+document.getElementById('pubBtnWire').addEventListener('click', function(){
+  wireOn=!wireOn; this.classList.toggle('active',wireOn);
+  if(model) model.traverse(c=>{ if(c.isMesh) c.material = wireOn?matW():matS(); });
+});
+document.getElementById('pubBtnClear').addEventListener('click', ()=>{
+  dropzone.style.display='flex';
+  canvasWrap.classList.remove('show');
+  vtoolbar.style.display='none';
+  if(model){ scene.remove(model); model.traverse(c=>{ if(c.isMesh) c.geometry.dispose(); }); model=null; }
+  finput.value='';
+});
+
+function initScene() {
+  const canvas = document.createElement('canvas');
+  canvasWrap.insertBefore(canvas, canvasWrap.firstChild);
+  scene = new THREE.Scene();
+  const w = canvasWrap.clientWidth, h = canvasWrap.clientHeight||Math.round(w*.75);
+  camera = new THREE.PerspectiveCamera(45, w/h, .001, 100000);
+  camera.position.set(3,2,3);
+  renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.setSize(w, h);
+  renderer.setClearColor(0x1C1A18, 1);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.1;
+  controls = new OrbitControls(camera, canvas);
+  controls.enableDamping=true; controls.dampingFactor=.08;
+  controls.minDistance=.01; controls.maxDistance=100000;
+  scene.add(new THREE.AmbientLight(0xfff5ee,.5));
+  const d1=new THREE.DirectionalLight(0xffffff,1.2); d1.position.set(5,8,5); scene.add(d1);
+  const d2=new THREE.DirectionalLight(0xd4ccbb,.4); d2.position.set(-3,4,-4); scene.add(d2);
+  scene.add(new THREE.HemisphereLight(0xc8c3bc,0x1c1a18,.3));
+  const grid=new THREE.GridHelper(100,100,0x3A3733,0x2C2A27);
+  grid.material.transparent=true; grid.material.opacity=.4; scene.add(grid);
+  new ResizeObserver(()=>{
+    const nw=canvasWrap.clientWidth, nh=canvasWrap.clientHeight||Math.round(nw*.75);
+    camera.aspect=nw/nh; camera.updateProjectionMatrix(); renderer.setSize(nw,nh);
+  }).observe(canvasWrap);
+  (function loop(){ requestAnimationFrame(loop); controls.update(); renderer.render(scene,camera); })();
+}
+
+async function go(file) {
+  const name=file.name, ext=name.split('.').pop().toLowerCase();
+  dropzone.style.display='none';
+  canvasWrap.classList.add('show');
+  clabel.textContent=name;
+  spinner.classList.remove('hidden');
+  spinTxt.textContent='Parsing…';
+  vtoolbar.style.display='none';
+  if(!scene) initScene();
+  if(model){ scene.remove(model); model.traverse(c=>{ if(c.isMesh) c.geometry.dispose(); }); model=null; }
+  try {
+    const buf=await file.arrayBuffer(); let grp;
+    if(ext==='stl'){ spinTxt.textContent='Loading STL…'; grp=loadSTL(buf); }
+    else if(ext==='obj'){ spinTxt.textContent='Loading OBJ…'; grp=await loadOBJ(file); }
+    else if(ext==='3mf'){ spinTxt.textContent='Loading 3MF…'; grp=await load3MF(buf); }
+    else if(['step','stp','iges','igs'].includes(ext)){ spinTxt.textContent='Loading STEP (~10s first time)…'; grp=await loadSTEP(buf); }
+    else throw new Error('Unsupported: .'+ext);
+    grp.traverse(c=>{ if(c.isMesh) c.material=matS(); });
+    const box=new THREE.Box3().setFromObject(grp);
+    const ctr=box.getCenter(new THREE.Vector3()), sz=box.getSize(new THREE.Vector3());
+    const mx=Math.max(sz.x,sz.y,sz.z);
+    grp.position.sub(ctr);
+    const b2=new THREE.Box3().setFromObject(grp); grp.position.y-=b2.min.y;
+    scene.add(grp); model=grp;
+    const dist=mx*1.8;
+    camera.position.set(dist*.7,dist*.5,dist*.7);
+    controls.target.set(0,sz.y*.35,0); controls.update();
+    cam0=camera.position.clone(); tgt0=controls.target.clone();
+    const gs=Math.pow(10,Math.floor(Math.log10(mx)))||1;
+    scene.children.forEach(c=>{ if(c.isGridHelper) c.scale.set(gs,gs,gs); });
+    let tris=0;
+    grp.traverse(c=>{ if(c.isMesh&&c.geometry){ const idx=c.geometry.index; tris+=idx?idx.count/3:(c.geometry.getAttribute('position')?.count||0)/3; } });
+    const fb=new THREE.Box3().setFromObject(grp), fs=fb.getSize(new THREE.Vector3());
+    const isMM=['step','stp','iges','igs'].includes(ext)||mx>500;
+    const sc=isMM?1/25.4:1;
+    vinfo.textContent=fmtBytes(file.size)+' · '+Math.round(tris).toLocaleString()+' tris · '+ext.toUpperCase();
+    spinner.classList.add('hidden');
+    vtoolbar.style.display='flex';
+  } catch(err) {
+    console.error(err);
+    spinTxt.textContent='Error: '+(err.message||'Parse failed');
+  }
+}
+
+function loadSTL(buf){ const geo=new STLLoader().parse(buf); geo.computeVertexNormals(); const g=new THREE.Group(); g.add(new THREE.Mesh(geo)); return g; }
+function loadOBJ(file){ return new Promise((r,j)=>{ const rd=new FileReader(); rd.onload=()=>{ try{ r(new OBJLoader().parse(rd.result)); }catch(e){j(e);} }; rd.onerror=j; rd.readAsText(file); }); }
+function load3MF(buf){ return new ThreeMFLoader().parse(buf); }
+function getOcct(){
+  if(occtP) return occtP;
+  occtP=new Promise((r,j)=>{
+    const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/occt-import-js@0.0.23/dist/occt-import-js.js';
+    s.onload=async()=>{ try{ const i=await occtimportjs({locateFile:n=>`https://cdn.jsdelivr.net/npm/occt-import-js@0.0.23/dist/${n}`}); r(i); }catch(e){j(e);} };
+    s.onerror=j; document.head.appendChild(s);
+  });
+  return occtP;
+}
+async function loadSTEP(buf){
+  const occt=await getOcct(), result=occt.ReadStepFile(new Uint8Array(buf),null);
+  const grp=new THREE.Group();
+  for(const m of result.meshes){
+    const geo=new THREE.BufferGeometry();
+    // occt returns plain JS arrays — must wrap as typed arrays for Three.js
+    const pos = m.attributes.position.array;
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(
+      pos instanceof Float32Array ? pos : new Float32Array(pos), 3));
+    if(m.attributes.normal){
+      const nor = m.attributes.normal.array;
+      geo.setAttribute('normal', new THREE.Float32BufferAttribute(
+        nor instanceof Float32Array ? nor : new Float32Array(nor), 3));
+    }
+    if(m.index){
+      const idx = m.index.array;
+      geo.setIndex(new THREE.BufferAttribute(
+        idx instanceof Uint32Array ? idx : new Uint32Array(idx), 1));
+    }
+    if(!m.attributes.normal) geo.computeVertexNormals();
+    grp.add(new THREE.Mesh(geo));
+  }
+  return grp;
+}
+function fmtBytes(b){ return b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(1)+' MB'; }
+</script>
+
 </body>
 </html>
