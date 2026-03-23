@@ -216,13 +216,15 @@ body{animation:pageIn 0.35s ease both}
 .service-intro p strong{color:var(--warm);font-weight:500}
 
 .service-card{display:grid;grid-template-columns:1fr 1.15fr;gap:0;background:var(--steel);border:1px solid var(--border);margin-bottom:3px;position:relative;overflow:hidden;transition:border-color 0.3s}
-.sc-photo{margin-top:28px;height:220px;overflow:hidden;border-radius:4px;border:1px solid var(--border);position:relative}
-.sc-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(0.75) contrast(1.05) saturate(0.85);transition:filter 0.4s,transform 0.4s}
-.service-card:hover .sc-photo img{filter:brightness(0.85) contrast(1.05) saturate(0.9);transform:scale(1.02)}
-.sc-photo::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to top,var(--steel),transparent)}
+.sc-left{position:relative;overflow:hidden}
+.sc-bg{position:absolute;inset:0;z-index:0}
+.sc-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.45) contrast(1.1) saturate(0.7);transition:filter 0.6s,transform 0.6s}
+.service-card:hover .sc-bg img{filter:brightness(0.55) contrast(1.1) saturate(0.8);transform:scale(1.03)}
+.sc-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(36,34,32,0.85) 0%,rgba(36,34,32,0.6) 55%,rgba(36,34,32,0.3) 100%);z-index:1}
 .service-card:hover{border-color:var(--border2)}
 .service-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--red)}
-.sc-left{padding:44px 48px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--border)}
+.sc-left{padding:44px 48px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--border);z-index:1}
+.sc-left>*:not(.sc-bg){position:relative;z-index:2}
 .sc-num{font-family:var(--display);font-size:72px;font-weight:900;color:rgba(184,36,15,0.06);line-height:1;margin-bottom:-10px}
 .sc-category{font-family:var(--mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
 .sc-title{font-family:var(--display);font-size:clamp(32px,3vw,46px);font-weight:900;text-transform:uppercase;color:var(--white);line-height:0.92;letter-spacing:-0.02em;margin-bottom:16px}
@@ -397,7 +399,7 @@ a.fcval:hover{color:var(--red)}
   .services-section{padding:52px 24px}
   .service-card{grid-template-columns:1fr}.sc-left{border-right:none;border-bottom:1px solid var(--border);padding:32px 24px}.sc-right{padding:24px}
   .process-steps{grid-template-columns:1fr 1fr}
-  .sc-photo{height:180px;margin-top:24px}
+  .sc-bg::after{background:linear-gradient(180deg,rgba(36,34,32,0.88) 0%,rgba(36,34,32,0.75) 100%)}
   .mat-grid{grid-template-columns:repeat(3,1fr)}
   .ind-grid,.why-grid{grid-template-columns:1fr 1fr}
   .preview-cta{grid-template-columns:1fr;padding:52px 24px;gap:32px}
@@ -522,6 +524,7 @@ a.fcval:hover{color:var(--red)}
   <!-- CNC MILLING -->
   <article class="service-card reveal" id="cnc-milling">
     <div class="sc-left">
+      <div class="sc-bg"><img src="/capabilities/milling-hero.jpg" alt="CNC machinist operating a Haas VMC at Cherry Creek Machine in Tulsa, Oklahoma" loading="lazy"></div>
       <div>
         <div class="sc-num">01</div>
         <div class="sc-category">Precision Machining</div>
@@ -540,7 +543,6 @@ a.fcval:hover{color:var(--red)}
         <a href="/cnc-milling" class="sc-link-primary">Milling Capabilities →</a>
         <a href="#contact" class="sc-link-ghost">Get a Milling Quote</a>
       </div>
-      <div class="sc-photo"><img src="/capabilities/milling-hero.jpg" alt="CNC machinist operating a Haas VMC at Cherry Creek Machine in Tulsa, Oklahoma" loading="lazy"></div>
     </div>
     <div class="sc-right">
       <div class="sc-feat-title">Key Advantages</div>
@@ -578,6 +580,7 @@ a.fcval:hover{color:var(--red)}
   <!-- CNC TURNING -->
   <article class="service-card reveal" style="transition-delay:.08s" id="cnc-turning">
     <div class="sc-left">
+      <div class="sc-bg"><img src="/capabilities/turning-hero.jpg" alt="Cherry Creek Machine machinists programming a Haas CNC lathe in Tulsa, Oklahoma" loading="lazy"></div>
       <div>
         <div class="sc-num">02</div>
         <div class="sc-category">Precision Machining</div>
@@ -595,7 +598,6 @@ a.fcval:hover{color:var(--red)}
         <a href="/cnc-turning" class="sc-link-primary">Turning Capabilities →</a>
         <a href="#contact" class="sc-link-ghost">Get a Turning Quote</a>
       </div>
-      <div class="sc-photo"><img src="/capabilities/turning-hero.jpg" alt="Cherry Creek Machine machinists programming a Haas CNC lathe in Tulsa, Oklahoma" loading="lazy"></div>
     </div>
     <div class="sc-right">
       <div class="sc-feat-title">Key Advantages</div>
@@ -633,6 +635,7 @@ a.fcval:hover{color:var(--red)}
   <!-- WATERJET -->
   <article class="service-card reveal" style="transition-delay:.16s" id="waterjet-cutting">
     <div class="sc-left">
+      <div class="sc-bg"><img src="/capabilities/waterjet-hero.jpg" alt="Waterjet cut parts being pulled from the OMAX 80X table at Cherry Creek Machine" loading="lazy"></div>
       <div>
         <div class="sc-num">03</div>
         <div class="sc-category">Cutting</div>
@@ -650,7 +653,6 @@ a.fcval:hover{color:var(--red)}
         <a href="/waterjet-cutting" class="sc-link-primary">Waterjet Capabilities →</a>
         <a href="#contact" class="sc-link-ghost">Get a Waterjet Quote</a>
       </div>
-      <div class="sc-photo"><img src="/capabilities/waterjet-hero.jpg" alt="Waterjet cut parts being pulled from the OMAX 80X table at Cherry Creek Machine" loading="lazy"></div>
     </div>
     <div class="sc-right">
       <div class="sc-feat-title">Key Advantages</div>
