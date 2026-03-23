@@ -13,9 +13,8 @@
 # Squarespace anchor-style quality section → new quality page
 /quality-iso             /quality             301
 
-# Capabilities landing → CNC milling (as set up in site)
-/capabilities            /cnc-milling         301
-/services                /cnc-milling         301
+# /services shortcut → capabilities landing page
+/services                /capabilities        301
 
 # Common misspellings / alternates
 /waterjet                /waterjet-cutting    301
