@@ -1,0 +1,9 @@
+# Cherry Creek Machine — Netlify Configuration
+
+[build]
+  publish = "."
+
+# Pretty URLs: ensures /about/index.html is served at /about/
+# and /about.html references in HTML are rewritten to /about
+[build.processing.html]
+  pretty_urls = true
