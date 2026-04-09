@@ -276,6 +276,11 @@ a.fcval:hover{color:var(--red)}
 .footer-cert{display:flex;align-items:center;gap:8px}
 .footer-iso{height:28px;width:auto;opacity:0.7;filter:invert(1) brightness(0.7)}
 .footer-cert-text{font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(161,29,34,0.75)}
+.okc-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);}
+.okc-feat-card{background:var(--panel);padding:28px 24px;}
+.okc-ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.cap-card{background:var(--steel);padding:28px 24px;text-decoration:none;transition:background 0.25s;display:block;}
 @media(max-width:960px){
 .topbar{padding:8px 24px;flex-direction:column;gap:4px;text-align:center}
 nav{padding:0 24px}.nav-links{display:none}.nav-cta{font-size:11px;padding:9px 16px;letter-spacing:0.08em}
@@ -291,9 +296,9 @@ nav{padding:0 24px}.nav-links{display:none}.nav-cta{font-size:11px;padding:9px 1
 .eq-table{display:block;overflow-x:auto}
 .contact-section{grid-template-columns:1fr;padding:60px 24px}
 .f-row{grid-template-columns:1fr}
-footer{padding:36px 24px 20px}.footer-grid{grid-template-columns:1fr 1fr;gap:24px 32px}.footer-desc{display:none}.footer-tag{font-size:7px;letter-spacing:0.16em}.footer-brand{margin-bottom:8px}.footer-socials{margin-top:4px}.fhead{margin-bottom:8px}.footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+footer{padding:32px 20px 18px;}.footer-grid{grid-template-columns:1fr 1fr;gap:20px 28px;}.footer-desc{display:none;}.footer-socials{display:none;}.footer-tag{font-size:7px;letter-spacing:0.14em;margin-bottom:8px;}.footer-brand{margin-bottom:6px;}.fhead{font-size:9px;margin-bottom:8px;}.flinks{gap:6px;}.flinks a{font-size:11px;}.fcval{font-size:12px;}.flbl{font-size:8px;margin-top:8px;}.footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;padding-top:14px;}.footer-cert-text{display:none;}.footer-copy{font-size:8px;}
 @media(max-width:480px){footer{padding:28px 18px 16px}.footer-grid{grid-template-columns:1fr;gap:16px}}
-.job-detail-inner{grid-template-columns:1fr}
+.job-detail-inner{grid-template-columns:1fr}.okc-feat-grid{grid-template-columns:1fr}.cap-grid{grid-template-columns:1fr}.okc-ind-grid{grid-template-columns:1fr}.okc-feat-card{padding:22px 20px}.cap-card{padding:20px}
 }
 
 /* ─── NAV LOGO FIX ─── */
@@ -472,7 +477,7 @@ body{animation:pageIn 0.35s ease both}
 <section style="background:var(--steel);border-top:1px solid var(--border);padding:80px 56px;">
   <p class="eyebrow">Why OKC Manufacturers Work With Us</p>
   <h2 class="sec-title" style="margin-bottom:44px;">One Shop. <em>No Excuses.</em></h2>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);">
+  <div class="okc-feat-grid">
     <div style="background:var(--panel);padding:32px 28px;">
       <div style="font-family:var(--display);font-size:17px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:10px;line-height:1.1;">~100-Mile Drive, Same-Day Pickup</div>
       <p style="font-size:13px;color:var(--text);line-height:1.8;">Tulsa to Oklahoma City is roughly a 100-mile straight shot on the Turner Turnpike. For urgent jobs, same-day part pickup is available — or we ship direct to your facility.</p>
@@ -494,7 +499,7 @@ body{animation:pageIn 0.35s ease both}
 <section style="background:var(--dark);border-top:1px solid var(--border);padding:80px 56px;">
   <p class="eyebrow">Full CNC Capabilities</p>
   <h2 class="sec-title" style="margin-bottom:44px;">What We <em>Machine</em></h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);">
+  <div class="cap-grid">
     <a href="/cnc-milling/" style="background:var(--steel);padding:32px 24px;text-decoration:none;transition:background 0.25s;display:block;">
       <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:6px;">Precision Machining</div>
       <div style="font-family:var(--display);font-size:18px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:8px;">CNC Milling</div>
@@ -518,16 +523,16 @@ body{animation:pageIn 0.35s ease both}
 <section style="background:var(--steel);border-top:1px solid var(--border);padding:80px 56px;">
   <p class="eyebrow">Industries We Serve in OKC</p>
   <h2 class="sec-title" style="margin-bottom:32px;">Oklahoma City <em>Industries</em></h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);">
-    <div style="background:var(--panel);padding:28px 24px;">
+  <div class="okc-ind-grid">
+    <div class="okc-feat-card">
       <div style="font-family:var(--display);font-size:16px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Oil &amp; Gas</div>
       <div style="font-size:13px;color:var(--text);line-height:1.75;">Downhole tools, valve bodies, production fittings, and pressure housings for Oklahoma's energy sector.</div>
     </div>
-    <div style="background:var(--panel);padding:28px 24px;">
+    <div class="okc-feat-card">
       <div style="font-family:var(--display);font-size:16px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Utilities</div>
       <div style="font-size:13px;color:var(--text);line-height:1.75;">Fittings, flanges, adapter plates, and infrastructure components for water, gas, and electrical utilities.</div>
     </div>
-    <div style="background:var(--panel);padding:28px 24px;">
+    <div class="okc-feat-card">
       <div style="font-family:var(--display);font-size:16px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Industrial</div>
       <div style="font-size:13px;color:var(--text);line-height:1.75;">Fixtures, tooling, production components, and custom hardware for OKC-area OEMs and manufacturers.</div>
     </div>

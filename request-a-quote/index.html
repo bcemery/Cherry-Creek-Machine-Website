@@ -291,7 +291,7 @@ nav{padding:0 24px}.nav-links{display:none}.nav-cta{font-size:11px;padding:9px 1
 .eq-table{display:block;overflow-x:auto}
 .contact-section{grid-template-columns:1fr;padding:60px 24px}
 .f-row{grid-template-columns:1fr}
-footer{padding:36px 24px 20px}.footer-grid{grid-template-columns:1fr 1fr;gap:24px 32px}.footer-desc{display:none}.footer-tag{font-size:7px;letter-spacing:0.16em}.footer-brand{margin-bottom:8px}.footer-socials{margin-top:4px}.fhead{margin-bottom:8px}.footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+footer{padding:32px 20px 18px;}.footer-grid{grid-template-columns:1fr 1fr;gap:20px 28px;}.footer-desc{display:none;}.footer-socials{display:none;}.footer-tag{font-size:7px;letter-spacing:0.14em;margin-bottom:8px;}.footer-brand{margin-bottom:6px;}.fhead{font-size:9px;margin-bottom:8px;}.flinks{gap:6px;}.flinks a{font-size:11px;}.fcval{font-size:12px;}.flbl{font-size:8px;margin-top:8px;}.footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;padding-top:14px;}.footer-cert-text{display:none;}.footer-copy{font-size:8px;}
 @media(max-width:480px){footer{padding:28px 18px 16px}.footer-grid{grid-template-columns:1fr;gap:16px}}
 .job-detail-inner{grid-template-columns:1fr}
 }
@@ -468,7 +468,7 @@ body{animation:pageIn 0.35s ease both}
   <div style="max-width:900px;margin:0 auto;padding:0 56px;">
     <p class="eyebrow">Start Your Project</p>
     <h1 class="sec-title" style="font-size:clamp(36px,4.5vw,56px);margin-bottom:16px;">Get a Quote<br><em>in 24 Hours.</em></h1>
-    <p style="font-size:16px;color:var(--text);line-height:1.85;max-width:600px;margin-bottom:24px;">Drawings welcome. No drawings? Describe the part — we'll work with you.</p>
+    <p style="font-size:16px;color:var(--text);line-height:1.85;max-width:600px;margin-bottom:24px;">Send us the basics and we'll follow up quickly. No drawing required to get started — just describe what you need.</p>
     <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:48px;">
       <span style="font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="color:var(--red);">✓</span> ISO 9001:2015</span>
       <span style="font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="color:var(--red);">✓</span> Est. 2017</span>
@@ -507,35 +507,27 @@ body{animation:pageIn 0.35s ease both}
   </div>
   <form class="form-wrap rr" data-netlify="true" netlify name="quote-request" method="POST" action="/thank-you/" enctype="multipart/form-data" style="transition-delay:.12s">
     <input type="hidden" name="form-name" value="quote-request">
-    <div class="f-row"><input class="f" type="text" placeholder="Your Name *" name="name" aria-label="Your Name" required><input class="f" type="text" placeholder="Company *" name="company" required></div>
-    <div class="f-row"><input class="f" type="email" placeholder="Email *" name="email" aria-label="Email" required><input class="f" type="tel" placeholder="Phone" name="phone"></div>
-    <fieldset style="border:none;padding:0;margin:0;">
-      <legend style="font-family:var(--mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Service Needed</legend>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px;">
+    <div class="f-row">
+      <input class="f" type="text" placeholder="Your Name *" name="name" aria-label="Your Name" required>
+      <input class="f" type="text" placeholder="Company *" name="company" required>
+    </div>
+    <div class="f-row">
+      <input class="f" type="email" placeholder="Email *" name="email" aria-label="Email" required>
+      <input class="f" type="tel" placeholder="Phone (optional)" name="phone" aria-label="Phone">
+    </div>
+    <textarea class="f tall" placeholder="Describe your project — material, quantity, tolerances, or just a quick overview. We'll ask follow-up questions. *" name="details" aria-label="Project Description" rows="4" required></textarea>
+    <div class="form-optional-label" style="font-family:var(--mono);font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;margin-top:4px;">Optional — helps us quote faster</div>
+    <fieldset style="border:none;padding:0;margin:0 0 10px;">
+      <legend style="font-family:var(--mono);font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Service Needed</legend>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
         <label style="font-size:13px;color:var(--text);display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="checkbox" name="service[]" value="CNC Milling"> CNC Milling</label>
         <label style="font-size:13px;color:var(--text);display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="checkbox" name="service[]" value="CNC Turning"> CNC Turning</label>
         <label style="font-size:13px;color:var(--text);display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="checkbox" name="service[]" value="Waterjet Cutting"> Waterjet Cutting</label>
-        <label style="font-size:13px;color:var(--text);display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="checkbox" name="service[]" value="Not Sure"> Not Sure</label>
       </div>
     </fieldset>
-    <select class="f" name="material" aria-label="Material">
-      <option value="" disabled selected>Material</option>
-      <option>Aluminum</option><option>Steel</option><option>Stainless Steel</option><option>4140/4340</option><option>Titanium</option><option>Inconel</option><option>Brass/Copper</option><option>Plastic/HDPE/Delrin</option><option>Other</option>
-    </select>
-    <div class="f-row">
-      <input class="f" type="number" placeholder="Quantity" name="quantity" aria-label="Quantity" min="1">
-      <select class="f" name="tolerance" aria-label="Target Tolerance">
-        <option value="" disabled selected>Target Tolerance</option>
-        <option>Standard ±0.001″</option><option>Tight ±0.0005″</option><option>Waterjet ±0.005″</option><option>Not Sure</option>
-      </select>
-    </div>
-    <textarea class="f tall" placeholder="Notes / part description..." name="details" aria-label="Project Details" rows="5"></textarea>
-    <label class="upload-zone"><input type="file" id="fileInput" name="attachment" multiple accept=".pdf,.step,.stp,.iges,.igs,.dxf,.dwg"><span class="uz-label">📎 <span id="fileLabel" class="uz-red">Attach drawings (PDF, STEP, DXF, DWG, IGES)</span></span></label>
-    <select class="f" name="source" aria-label="How did you find us?">
-      <option value="" disabled selected>How did you find us?</option>
-      <option>Google Search</option><option>Referral</option><option>LinkedIn</option><option>Existing Customer</option><option>Other</option>
-    </select>
-    <button type="submit" class="btn-submit" id="formSubmit">Submit Quote Request →</button>
+    <label class="upload-zone"><input type="file" id="fileInput" name="attachment" multiple accept=".pdf,.step,.stp,.iges,.igs,.dxf,.dwg"><span class="uz-label">📎 <span id="fileLabel" class="uz-red">Upload files if you have them — PDF, STEP, DXF, IGES</span></span></label>
+    <p style="font-size:11px;color:var(--muted);margin:-4px 0 6px;font-family:var(--mono);letter-spacing:0.06em;">No drawing required to start.</p>
+    <button type="submit" class="btn-submit" id="formSubmit">Send Request →</button>
     <div class="f-privacy">🔒 Your information is never shared or sold</div>
   </form>
 </section>

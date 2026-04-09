@@ -276,6 +276,10 @@ a.fcval:hover{color:var(--red)}
 .footer-cert{display:flex;align-items:center;gap:8px}
 .footer-iso{height:28px;width:auto;opacity:0.7;filter:invert(1) brightness(0.7)}
 .footer-cert-text{font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(161,29,34,0.75)}
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.ind-card{background:var(--steel);padding:40px 32px;}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.cap-card{background:var(--steel);padding:28px 24px;text-decoration:none;transition:background 0.25s;display:block;}
 @media(max-width:960px){
 .topbar{padding:8px 24px;flex-direction:column;gap:4px;text-align:center}
 nav{padding:0 24px}.nav-links{display:none}.nav-cta{font-size:11px;padding:9px 16px;letter-spacing:0.08em}
@@ -291,9 +295,9 @@ nav{padding:0 24px}.nav-links{display:none}.nav-cta{font-size:11px;padding:9px 1
 .eq-table{display:block;overflow-x:auto}
 .contact-section{grid-template-columns:1fr;padding:60px 24px}
 .f-row{grid-template-columns:1fr}
-footer{padding:36px 24px 20px}.footer-grid{grid-template-columns:1fr 1fr;gap:24px 32px}.footer-desc{display:none}.footer-tag{font-size:7px;letter-spacing:0.16em}.footer-brand{margin-bottom:8px}.footer-socials{margin-top:4px}.fhead{margin-bottom:8px}.footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+footer{padding:32px 20px 18px;}.footer-grid{grid-template-columns:1fr 1fr;gap:20px 28px;}.footer-desc{display:none;}.footer-socials{display:none;}.footer-tag{font-size:7px;letter-spacing:0.14em;margin-bottom:8px;}.footer-brand{margin-bottom:6px;}.fhead{font-size:9px;margin-bottom:8px;}.flinks{gap:6px;}.flinks a{font-size:11px;}.fcval{font-size:12px;}.flbl{font-size:8px;margin-top:8px;}.footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;padding-top:14px;}.footer-cert-text{display:none;}.footer-copy{font-size:8px;}
 @media(max-width:480px){footer{padding:28px 18px 16px}.footer-grid{grid-template-columns:1fr;gap:16px}}
-.job-detail-inner{grid-template-columns:1fr}
+.job-detail-inner{grid-template-columns:1fr}.ind-grid{grid-template-columns:1fr}.cap-grid{grid-template-columns:1fr}.ind-card{padding:28px 20px}.cap-card{padding:20px}
 }
 
 /* ─── NAV LOGO FIX ─── */
@@ -470,8 +474,8 @@ body{animation:pageIn 0.35s ease both}
   <p style="font-size:16px;color:var(--text);line-height:1.85;max-width:650px;">Precision CNC parts for Oklahoma's most demanding industries — oil &amp; gas, utilities, trenchless, aerospace, and industrial manufacturing.</p>
 </section>
 <section style="background:var(--steel);border-top:1px solid var(--border);padding:0;">
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);">
-    <div style="background:var(--steel);padding:40px 32px;">
+  <div class="ind-grid">
+    <div class="ind-card">
       <div style="font-family:var(--display);font-size:52px;font-weight:900;color:rgba(184,36,15,0.07);line-height:1;margin-bottom:8px;">01</div>
       <div style="font-family:var(--display);font-size:20px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:12px;line-height:1.1;">Oil &amp; Gas</div>
       <p style="font-size:13px;color:var(--text);line-height:1.8;margin-bottom:16px;">Downhole tool components, valve bodies, mandrels, pup joints, subs, pressure housings, and production fittings. We machine to the tolerances oil &amp; gas demands — no shortcuts.</p>
@@ -481,7 +485,7 @@ body{animation:pageIn 0.35s ease both}
         <a href="/cnc-turning/" style="font-family:var(--mono);font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);background:var(--red-dim);border:1px solid rgba(184,36,15,0.2);padding:2px 8px;border-radius:2px;text-decoration:none;">CNC Turning</a>
       </div>
     </div>
-    <div style="background:var(--steel);padding:40px 32px;">
+    <div class="ind-card">
       <div style="font-family:var(--display);font-size:52px;font-weight:900;color:rgba(184,36,15,0.07);line-height:1;margin-bottom:8px;">02</div>
       <div style="font-family:var(--display);font-size:20px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:12px;line-height:1.1;">Utilities &amp; Infrastructure</div>
       <p style="font-size:13px;color:var(--text);line-height:1.8;margin-bottom:16px;">Custom components for water, gas, and electrical utility infrastructure — fittings, flanges, adapter plates, structural brackets, and enclosures. Built to spec, documented under ISO 9001:2015.</p>
@@ -492,7 +496,7 @@ body{animation:pageIn 0.35s ease both}
         <a href="/waterjet-cutting/" style="font-family:var(--mono);font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);background:var(--red-dim);border:1px solid rgba(184,36,15,0.2);padding:2px 8px;border-radius:2px;text-decoration:none;">Waterjet Cutting</a>
       </div>
     </div>
-    <div style="background:var(--steel);padding:40px 32px;">
+    <div class="ind-card">
       <div style="font-family:var(--display);font-size:52px;font-weight:900;color:rgba(184,36,15,0.07);line-height:1;margin-bottom:8px;">03</div>
       <div style="font-family:var(--display);font-size:20px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:12px;line-height:1.1;">Trenchless Technology</div>
       <p style="font-size:13px;color:var(--text);line-height:1.8;margin-bottom:16px;">Housing components, wear parts, bearing journals, drive heads, and custom assemblies for horizontal directional drilling and trenchless boring equipment. Tight tolerances where it counts.</p>
@@ -502,7 +506,7 @@ body{animation:pageIn 0.35s ease both}
         <a href="/cnc-turning/" style="font-family:var(--mono);font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);background:var(--red-dim);border:1px solid rgba(184,36,15,0.2);padding:2px 8px;border-radius:2px;text-decoration:none;">CNC Turning</a>
       </div>
     </div>
-    <div style="background:var(--steel);padding:40px 32px;">
+    <div class="ind-card">
       <div style="font-family:var(--display);font-size:52px;font-weight:900;color:rgba(184,36,15,0.07);line-height:1;margin-bottom:8px;">04</div>
       <div style="font-family:var(--display);font-size:20px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:12px;line-height:1.1;">Aerospace &amp; Defense</div>
       <p style="font-size:13px;color:var(--text);line-height:1.8;margin-bottom:16px;">Structural brackets, bulkhead components, housings, precision fixtures, and aluminum machined parts to aerospace tolerances. ISO 9001:2015 documentation on every job — first-article inspection standard.</p>
@@ -511,7 +515,7 @@ body{animation:pageIn 0.35s ease both}
         <a href="/cnc-milling/" style="font-family:var(--mono);font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);background:var(--red-dim);border:1px solid rgba(184,36,15,0.2);padding:2px 8px;border-radius:2px;text-decoration:none;">CNC Milling</a>
       </div>
     </div>
-    <div style="background:var(--steel);padding:40px 32px;">
+    <div class="ind-card">
       <div style="font-family:var(--display);font-size:52px;font-weight:900;color:rgba(184,36,15,0.07);line-height:1;margin-bottom:8px;">05</div>
       <div style="font-family:var(--display);font-size:20px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:12px;line-height:1.1;">Industrial Manufacturing</div>
       <p style="font-size:13px;color:var(--text);line-height:1.8;margin-bottom:16px;">Fixtures, tooling, adapter plates, spacers, custom hardware, and production components for industrial OEMs. We handle prototype to production — one shop, one quality system.</p>
@@ -522,7 +526,7 @@ body{animation:pageIn 0.35s ease both}
         <a href="/waterjet-cutting/" style="font-family:var(--mono);font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);background:var(--red-dim);border:1px solid rgba(184,36,15,0.2);padding:2px 8px;border-radius:2px;text-decoration:none;">Waterjet Cutting</a>
       </div>
     </div>
-    <div style="background:var(--steel);padding:40px 32px;">
+    <div class="ind-card">
       <div style="font-family:var(--display);font-size:52px;font-weight:900;color:rgba(184,36,15,0.07);line-height:1;margin-bottom:8px;">06</div>
       <div style="font-family:var(--display);font-size:20px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:12px;line-height:1.1;">Agricultural &amp; Energy Equipment</div>
       <p style="font-size:13px;color:var(--text);line-height:1.8;margin-bottom:16px;">Wear plates, hitch components, structural weldment details, mounting hardware, shafts, and custom hardware for ag equipment and energy applications in and around Oklahoma.</p>
@@ -537,18 +541,18 @@ body{animation:pageIn 0.35s ease both}
 <section style="background:var(--dark);border-top:1px solid var(--border);padding:80px 56px;">
   <p class="eyebrow">Our Capabilities</p>
   <h2 class="sec-title" style="margin-bottom:32px;">Three Services.<br><em>One Shop.</em></h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);">
-    <a href="/cnc-milling/" style="background:var(--steel);padding:28px 24px;text-decoration:none;transition:background 0.25s;display:block;">
+  <div class="cap-grid">
+    <a href="/cnc-milling/" class="cap-card">
       <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:6px;">01 · Precision Machining</div>
       <div style="font-family:var(--display);font-size:18px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:8px;">CNC Milling</div>
       <div style="font-size:13px;color:var(--text);line-height:1.75;">8 Haas VMCs, 3 &amp; 4-axis, tolerances to ±0.0005″</div>
     </a>
-    <a href="/cnc-turning/" style="background:var(--steel);padding:28px 24px;text-decoration:none;transition:background 0.25s;display:block;">
+    <a href="/cnc-turning/" class="cap-card">
       <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:6px;">02 · Precision Machining</div>
       <div style="font-family:var(--display);font-size:18px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:8px;">CNC Turning</div>
       <div style="font-size:13px;color:var(--text);line-height:1.75;">5 Haas lathes, live tooling, Y-axis, up to 15″ dia.</div>
     </a>
-    <a href="/waterjet-cutting/" style="background:var(--steel);padding:28px 24px;text-decoration:none;transition:background 0.25s;display:block;">
+    <a href="/waterjet-cutting/" class="cap-card">
       <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:6px;">03 · Cutting</div>
       <div style="font-family:var(--display);font-size:18px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Waterjet Cutting</div>
       <div style="font-size:13px;color:var(--text);line-height:1.75;">OMAX 80X, 13′×7′ table, zero heat-affected zone</div>
