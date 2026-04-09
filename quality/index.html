@@ -543,27 +543,17 @@ body{animation:pageIn 0.35s ease both}
     <div class="commit-card reveal" style="transition-delay:.16s"><div class="commit-icon">🗣️</div><div class="commit-title">Direct Communication on Every Job</div><p class="commit-body">When you call Cherry Creek Machine, you talk to the people making your parts. No call centers, no runaround. If something comes up during production, you hear from us first.</p></div>
   </div>
 </section>
-<section class="contact-section" id="contact">
-  <div class="rl">
-    <div class="ct-eyebrow">Request a Quote</div>
-    <div class="ct-title">Get a Quote<br><em>in 24 Hours.</em></div>
-    <div class="ct-promise"><div class="ctp-icon">✓</div><div class="ctp-text">Response within 1 business day</div></div>
-    <p class="ct-sub">Share your drawings, material, quantity, and tolerances. You'll hear directly from the people running the machines — not a sales desk.</p>
-    <div class="cti-row"><span class="cti-lbl">Phone</span><a href="tel:9189259780" class="cti-val">(918) 925-9780</a></div>
-    <div class="cti-row"><span class="cti-lbl">Email</span><a href="mailto:info@ccmachine.com" class="cti-val">info@ccmachine.com</a></div>
-    <div class="cti-row"><span class="cti-lbl">Address</span><span class="cti-val">2045 E. 59th Place North, Tulsa OK 74136</span></div>
+<section style="background:var(--panel);border-top:3px solid var(--red);padding:72px 56px;" id="contact">
+  <div style="max-width:680px;margin:0 auto;text-align:center;">
+    <p style="font-family:var(--mono);font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:10px;"><span style="width:18px;height:1px;background:var(--red);display:inline-block;"></span>Start Your Project<span style="width:18px;height:1px;background:var(--red);display:inline-block;"></span></p>
+    <h2 style="font-family:var(--display);font-size:clamp(28px,3.5vw,44px);font-weight:900;text-transform:uppercase;color:var(--white);line-height:0.95;letter-spacing:-0.02em;margin-bottom:16px;">Need a Quote<br><em style="font-style:normal;color:var(--red);">for This Work?</em></h2>
+    <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Send us the basics and we'll follow up quickly. No drawing required to get started — just describe what you need.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+      <a href="/request-a-quote/" class="btn-primary" style="font-size:14px;padding:16px 36px;">Get a Quote →</a>
+      <a href="tel:9189259780" style="font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--muted)'">or call (918) 925-9780</a>
+    </div>
+    <p style="font-family:var(--mono);font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-top:20px;">No drawing required · ISO 9001:2015 · Response within 1 business day</p>
   </div>
-  <form class="form-wrap rr" data-netlify="true" name="quote-quality" method="POST" action="/thank-you" enctype="multipart/form-data" style="transition-delay:.12s">
-    <input type="hidden" name="form-name" value="quote-quality">    <div class="f-row"><input class="f" type="text" placeholder="Your Name *" name="name" aria-label="Your Name" required><input class="f" type="text" placeholder="Company *" name="company" required></div>
-    <div class="f-row"><input class="f" type="email" placeholder="Email *" name="email" aria-label="Email" required><input class="f" type="tel" placeholder="Phone" name="phone"></div>
-    <select class="f" name="service" aria-label="Service Needed"><option value="" disabled>Service Needed *</option><option>CNC Milling</option><option>CNC Turning</option><option>Waterjet Cutting</option><option>Welding &amp; Assembly</option><option>Multiple / Not Sure</option></select>
-    <div class="f-row"><input class="f" type="text" placeholder="Material(s)" name="material"><input class="f" type="text" placeholder="Quantity" name="quantity" aria-label="Quantity"></div>
-    <input class="f" type="text" placeholder="Tolerance Requirements" name="tolerance">
-    <textarea class="f tall" placeholder="Project details, timeline, special requirements..." name="details" aria-label="Project Details"></textarea>
-    <label class="upload-zone"><input type="file" id="fileInput" name="attachment" multiple><span class="uz-label">📎 <span id="fileLabel" class="uz-red">Attach drawings (PDF, DXF, STEP)</span></span></label>
-    <button type="submit" class="btn-submit" id="formSubmit">Submit Request →</button>
-    <div class="f-privacy">🔒 Your information is never shared or sold</div>
-  </form>
 </section>
 <footer>
   <div class="footer-grid">
