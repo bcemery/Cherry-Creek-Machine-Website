@@ -39,8 +39,8 @@
 /water-jet               /waterjet-cutting/   301
 /milling                 /cnc-milling/        301
 /turning                 /cnc-turning/        301
-/contact                 /#contact            301
-/quote                   /#contact            301
+/contact                 /request-a-quote/    301
+/quote                   /request-a-quote/    301
 /jobs                    /careers/            301
 
 # Old Squarespace file paths still work (certificate PDF)
