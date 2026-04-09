@@ -8,6 +8,30 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-BBQYVMGJ3W');
+
+// ── Conversion event: quote form submission ──────────────────────────────────
+// Fires once when the thank-you page loads, meaning a form was successfully
+// submitted. GA4 event name 'generate_lead' is the recommended standard for
+// B2B quote/contact forms and maps directly to a GA4 conversion goal.
+// utm_content is pulled from the referrer URL so GA4 can attribute the
+// conversion back to the originating service page CTA.
+(function() {
+  try {
+    var ref = document.referrer || '';
+    var utmContent = '';
+    if (ref.indexOf('utm_content=') !== -1) {
+      utmContent = decodeURIComponent(ref.split('utm_content=')[1].split('&')[0]);
+    }
+    gtag('event', 'generate_lead', {
+      event_category:  'quote_form',
+      event_label:     utmContent || 'direct',
+      source_page:     utmContent || 'direct',
+      method:          'netlify_form',
+      currency:        'USD',
+      value:           1
+    });
+  } catch(e) {}
+})();
 </script>
 
 <meta charset="UTF-8">
