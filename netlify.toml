@@ -7,3 +7,10 @@
 # and /about.html references in HTML are rewritten to /about
 [build.processing.html]
   pretty_urls = true
+
+# Force www → non-www (fixes GSC "Page with redirect" errors)
+[[redirects]]
+  from = "https://www.ccmachine.com/*"
+  to   = "https://ccmachine.com/:splat"
+  status = 301
+  force  = true
