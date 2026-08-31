@@ -45,3 +45,17 @@
 
 # Old Squarespace file paths still work (certificate PDF)
 # No redirect needed — the PDF link in the site points to the Squarespace URL directly
+
+# ──────────────────────────────────────────────────────────
+# Controlled-document permalinks (AS9100D)
+# These URLs are printed on purchase orders and referenced in
+# controlled documents. DO NOT change or remove them. When a
+# new revision issues, update ONLY the right-hand target below.
+# ──────────────────────────────────────────────────────────
+
+# Supplier Quality Requirements (CCM-QF-012)
+# Referenced by PO and in the document itself as ccmachine.com/supplier-quality
+# 200 rewrite serves the versioned PDF while keeping the pretty URL in the address bar.
+# When a new revision issues (Rev B, C, ...), update BOTH targets below to the new file.
+/supplier-quality        /supplier-quality-revA.pdf   200
+/supplier-quality.pdf    /supplier-quality-revA.pdf   200
